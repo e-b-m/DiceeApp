@@ -9,12 +9,90 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var diceImageView1: UIImageView!
+    @IBOutlet weak var diceImageView2: UIImageView!
+    
+    var leftDiceNumber = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+    // WHO         WHAT    VALUE
+    diceImageView1.image = #imageLiteral(resourceName: "DiceSix")
+        
+    diceImageView1.alpha = 0.5
+    
+    // WHO         WHAT    VALUE
+    diceImageView2.image = #imageLiteral(resourceName: "DiceTwo")
+        
     }
+    
+    @IBAction func rollButtonPressed(_ sender: UIButton) {
+        print("leftDiceNumber at beginning = \(leftDiceNumber)")
+        diceImageView1.image = [ #imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix") ][leftDiceNumber]
+        
+        leftDiceNumber = leftDiceNumber + 1
+        // left dice number = 2
+        print("leftDiceNumber at the end = \(leftDiceNumber)")
 
-
+        
+        
+    }
+    
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//@interface UIView : UIResponder {
+//
+//    struct ContentView: View {
+//        var body: some View {
+//            Image("GreenBackground")
+//                .resizable()
+//                .frame(width: 200, height: 200) // Adjust the width and height as desired
+//                .aspectRatio(contentMode: .fit) // Preserve the aspect ratio of the image
+//        }
+//    }
+//}
+//
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
 
